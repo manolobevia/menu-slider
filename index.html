@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+	<meta charset="utf-8">
+
+	<title></title>
+
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<link href="https://fonts.googleapis.com/css?family=Work+Sans:200,400" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+
+</head>
+
+<body>
+
+	<!-- Menu Hamburger Icon Animation thanks to https://codepen.io/designcouch/pen/Atyop-->
+	<div id="nav-icon2" class="toggleButton flicker-1">
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+	</div>
+
+	<div class='box'>
+
+		<nav>
+
+			<ul>
+
+				<li><a href="#">HOME</a></li>
+				<li><a href="#">ABOUT</a></li>
+				<li><a href="#">PORFOLIO</a></li>
+				<li><a href="#">CLIENTS</a></li>
+				<li><a href="#">BLOG</a></li>
+				<li><a href="#">CONTACT</a></li>
+
+			</ul>
+
+		</nav>
+
+	</div>
+
+	<div class='hero'>
+
+		<h1 class="text-pop-up-top">Welcome</h1>
+
+	</div>
+
+	<script type="text/javascript">
+
+		var boxOne = document.getElementsByClassName('box')[0];
+		var btnMenu = document.getElementsByClassName('toggleButton')[0];
+		var animation = false;
+
+		btnMenu.onclick = function() {
+
+			if (!animation) {
+				boxOne.classList.add('getIn');
+				this.classList.add('open');
+				boxOne.classList.remove('getOut');
+				animation = true;
+
+			} else {
+
+				var computedStyle = window.getComputedStyle(boxOne);
+				console.log(computedStyle);
+
+				var marginLeft = computedStyle.getPropertyValue('margin-left');
+
+				boxOne.style.marginLeft = marginLeft;
+
+				boxOne.classList.remove('getIn');
+				this.classList.remove('open');
+				boxOne.classList.add('getOut');
+
+				animation = false;
+			}
+		}
+	</script>
+
+</body>
+
+</html>
